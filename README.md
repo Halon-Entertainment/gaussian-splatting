@@ -97,7 +97,10 @@ We did some changes to the conda project environment:
 
 #### Local Setup
 
-Our default, provided install method is based on Conda package and environment management:
+Our default, provided install method is based on Conda package and environment management.
+
+__Make sure that you launch the x64 Native Tools Command Prompt for VS 2019, and _not_ the regular command line__
+
 ```shell
 SET DISTUTILS_USE_SDK=1 # Windows only
 conda env create --file environment.yml
