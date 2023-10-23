@@ -76,12 +76,24 @@ The optimizer uses PyTorch and CUDA extensions in a Python environment to produc
 - Please see FAQ for smaller VRAM configurations
 
 ### Software Requirements
-- Conda (recommended for easy setup)
-- C++ Compiler for PyTorch extensions (we used Visual Studio 2019 for Windows)
-- CUDA SDK 11 for PyTorch extensions, install *after* Visual Studio (we used 11.8, **known issues with 11.6**)
-- C++ Compiler and CUDA SDK must be compatible
+
+This is the sofware dependencies you will need installed prior to installing the project. Many of these dependencies are shared with other NeRF projects.
+- __Git__ - You will need this to pull the code from GitHub. You can download it [here ](https://git-scm.com/downloads). Follow default installation instructions. You can test to see if you have it already installed by typing ```git --version``` into command prompt
+- __Conda__ - I recommend using [Anaconda](https://www.anaconda.com/download) because it's easy to install and manage environments in the future. [MiniConda](https://docs.conda.io/en/latest/miniconda.html) is a great lightweight alternative.
+- __CUDA Toolkit__ - this was tested with 11.8. Ensure you are not running 11.6 or 12+. You can download CUDA Toolkit [here](https://developer.nvidia.com/cuda-toolkit-archive) You can check which version of CUDA Toolkit you have installed by typing ```nvcc --version``` into command prompt.
+- __Visual Studio 2019__ - You can download and install it [here](https://visualstudio.microsoft.com/vs/older-downloads/). Make sure you add __Desktop Development with C++__ when installing <br>
+![VS_Option](assets/VS_Option.png)
+- __COLMAP__ - Use the Windows binary, it's easy! You can download it [here](https://github.com/colmap/colmap/releases)
+- __ImageMagik__ - This is for preparing your images. Download it [here](https://imagemagick.org/script/download.php)
+- __FFMPEG__ - Use this to extract images from video. Download it [here](https://ffmpeg.org/download.html)
+  
 
 ### Setup
+Due to some issues with PyTorch 1.12.1 and CODA 11.8 ([PyTorch 1.12.1 apparently doesn't support CODA 11.6](https://pytorch.org/get-started/previous-versions/#v1121))
+We did some changes to the conda project environment:
+- Using Python 3.9 instead of 3.7
+- including pytorch-cuda=11.8
+- setting pytorch, torchaudio and torchvision to the latest version
 
 #### Local Setup
 
